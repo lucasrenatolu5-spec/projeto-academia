@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/*CORES
+ cor 1: #000000 preto
+ cor 2: #FFFFFF branco
+ cor 3: #F2CB05 amarelo
+ cor 4: #F29F05 laranja claro
+ cor 5: #F27405 laranja escuro
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    display: flex;
+    background-color: black;
+    color: #F27405;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: "Archivo Black", sans-serif;
+}
+
+span.material-symbols-outlined{
+    color: white;
+    font-size: 2em;
+}
+
+header{
+   background: black url(imagens/pexels-bemistermister-3490363.jpg) center center no-repeat;
+   background-size: cover;
+   height: 600px;
+   background-attachment: scroll;
+   font-family: "Archivo Black", sans-serif;
+}
+
+header h1{
+    color: white;
+    text-align: center;
+    padding-top: 150px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    flex-wrap: wrap;
+}
+
+header #obj strong{
+    color: #F27405;
+}
+
+header #obj{
+    text-align: center;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header p{
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(1rem, 3.5vw, 1.1rem);
+}
+
+div.links1{
+     padding-top: 30px;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    display: block;
+    text-align: center;
+}
