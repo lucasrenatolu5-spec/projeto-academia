@@ -74,3 +74,36 @@ header a{
     display: block;
     text-align: center;
 }
+
+#comecar{
+    background-color: #F27405;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 10px #f27405b2;
+}
+
+#visita{
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid white;
+    max-width: 200px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 40px;
+}
+
+#comecar:hover{
+    box-shadow: 3px 4px 20px #fa7500;
+    transition: box-shadow .5s ease, transform .5s ease;
+    transform: translate(0px, -3px);
+}
+
+#visita:hover{
+    background-color: white;
+    color: #F27405;
+    transition: background-color .4s ase, color .4s;
+    transition: all .4s ease;
+}
+
