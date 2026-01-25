@@ -137,33 +137,43 @@ main{
 }
 
 section.cards{
-    background-color: white;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
-    max-width: 400px;
+    max-width: 900px;
+    width: 80%;
     height: 300px;
     margin: auto;
-    border-radius: 10px;
     margin-top: 20px;
 }
 
 .emoji{
-    font-size: 3em;
-   
+    font-size: 3.5em;
 }
 
-#card1{
-    margin: auto;
-    text-align: center;
-    padding: 10px;
+.card1{
+     display: flex;
+     flex-direction: column;
+     justify-content: center; /* eixo vertical */
+     align-items: center;     /* eixo horizontal */
+     text-align: center;
+     height: 100%;
+     padding: 10px;
+     background-color: white;
+     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
+     border-radius: 20px;
+     margin-top: 40px;
 }
 
-#card1 h3{
+.card1:hover{
+     box-shadow: 2px 2px 20px #0e669973;
+     transition: box-shadow .5s;
+}
+
+.card1 h3{
     margin-top: 20px;
     font-family: "Archivo Black", sans-serif;
     max-width: 700px;
 }
 
-#card1 p{
+card1 p{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
 }
