@@ -33,7 +33,8 @@ span.material-symbols-outlined{
 header{
    background: url(imagens/pexels-bemistermister-3490363.jpg) center center;
    background-repeat: no-repeat;
-   background-size: cover;min-height: 100vh;
+   background-size: cover;
+   min-height: 100vh;
    height: auto;
    font-family: "Archivo Black", sans-serif;
 }
