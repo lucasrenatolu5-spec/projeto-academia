@@ -51,11 +51,24 @@
                 <h3>Vestiários Completos</h3>
                 <p>Chuveiros, armários e toda infraestrutura necessária</p>
             </div>
+            <div class="card1">
+              <p class="emoji">🧘</p>
+              <h3>Aulas em Grupo</h3>
+              <p>Ritmos e Zumba</p>
+            </div>
         </section>
         <section id="planos">
             <div>
                 <h2>Nossos Planos</h2>
                 <p>Escolha o melhor plano para você</p>
+            </div>
+            <div class="card2">
+              <h3>Mensal</h3>
+              <div class="numeros">
+                <p>R$</p>
+                <h3>99</h3>
+                <p>/mês</p>
+              </div>
             </div>
         </section>
     </main>
@@ -101,15 +114,20 @@
     card.style.transition = 'box-shadow 0.8s ease'
   })
 
-  const observer = new IntersectionObserver((entries) => {
+  function atualizarSombra() {
+    const centroTela = window.innerHeight / 2
 
-    let ativo = null
-    let maior = 0
+    let cardAtivo = null
+    let menorDistancia = Infinity
 
-    entries.forEach(entry => {
-      if (entry.intersectionRatio > maior) {
-        maior = entry.intersectionRatio
-        ativo = entry.target
+    cards.forEach(card => {
+      const rect = card.getBoundingClientRect()
+      const centroCard = rect.top + rect.height / 2
+      const distancia = Math.abs(centroTela - centroCard)
+
+      if (distancia < menorDistancia && centroCard > 0 && centroCard < window.innerHeight) {
+        menorDistancia = distancia
+        cardAtivo = card
       }
     })
 
@@ -117,15 +135,13 @@
       card.style.boxShadow = sombraBase
     })
 
-    if (ativo) {
-      ativo.style.boxShadow = sombraAtiva
+    if (cardAtivo) {
+      cardAtivo.style.boxShadow = sombraAtiva
     }
+  }
 
-  }, {
-    threshold: [0.25, 0.5, 0.75]
-  })
-
-  cards.forEach(card => observer.observe(card))
+  window.addEventListener('scroll', atualizarSombra)
+  window.addEventListener('load', atualizarSombra)
 
   // hover
   cards.forEach(card => {
@@ -134,7 +150,7 @@
     })
 
     card.addEventListener('mouseleave', () => {
-      card.style.boxShadow = sombraAtiva
+      atualizarSombra()
     })
   })
 </script>
