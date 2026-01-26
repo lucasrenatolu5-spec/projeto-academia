@@ -221,12 +221,8 @@ section#planos div p{
 }
 
 .card2:hover{
-    box-shadow: 2px 2px 20px #c9bf0fa6;
+    box-shadow: 2px 2px 20px #c9c00faf;
     transition: box-shadow .5s;
-}
-
-.card2 h3{
-    
 }
 
 .numeros{
