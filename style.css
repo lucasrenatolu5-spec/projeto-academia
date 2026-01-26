@@ -213,7 +213,6 @@ section#planos div p{
     color: black;
     max-width: 90%;
     margin: auto;
-    text-align: center;
     border-radius: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.7em;
@@ -223,6 +222,10 @@ section#planos div p{
 .card2:hover{
     box-shadow: 2px 2px 20px #c9c00faf;
     transition: box-shadow .5s;
+}
+
+.card2 h3{
+    text-align: center;
 }
 
 .numeros{
@@ -318,11 +321,14 @@ div.assinar a{
     color: black;
     max-width: 90%;
     margin: auto;
-    text-align: center;
     border-radius: 20px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.7em;
     margin-top: 50px;
+}
+
+.card-cor-diferente h3{
+    text-align: center;
 }
 
 .beneficios2 ul{
