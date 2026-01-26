@@ -116,7 +116,7 @@ header a{
 
 #visita:hover{
     background-color: white;
-    color: #0D5F8F;
+    color: #FDC928;
     transition: background-color .5s ease, color .5s ease;
 }
 
@@ -209,7 +209,7 @@ section#planos div p{
 }
 
 .card2{
-    background-color: white;
+    background-color: #FFF212;
     color: black;
     max-width: 90%;
     margin: auto;
@@ -257,9 +257,13 @@ section#planos div p{
     justify-content: flex-start;
     justify-items: flex-start;
     font-size: 0.7em;
-    padding: 10px;
+    padding: 20px;
     padding-bottom: 50px;
     list-style: none;
+}
+
+.beneficios li{
+    padding-bottom: 20px;
 }
 
 hr{
@@ -269,6 +273,11 @@ hr{
 }
 
 div.assinar{
+    display: flex;
+    padding: 20px;
+}
+
+div.assinar1{
     display: flex;
     padding: 20px;
 }
@@ -283,8 +292,47 @@ div.assinar a{
     font-size: 0.7em;
 }
 
-.card2 a:hover{
+.assinar1 a{
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(to top, #FDC928, #FFF212);
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 0.7em;
+}
+
+.assinar1 a:hover{
+    transition: box-shadow .5s ease, transform .5s ease;
+    transform: translate(0px, -3px);
+}
+
+.assinar a:hover{
     background-color: #1B1B1B;
     color: white;
-    transition: background-color .5s ease-in-out, color .5s ease-in-out;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out;
+}
+
+.card-cor-diferente{
+    background-color: white;
+    color: black;
+    max-width: 90%;
+    margin: auto;
+    text-align: center;
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7em;
+    margin-top: 50px;
+}
+
+.beneficios2 ul{
+    justify-content: flex-start;
+    justify-items: flex-start;
+    font-size: 0.7em;
+    padding: 20px;
+    padding-bottom: 50px;
+    list-style: none;
+}
+
+.beneficios2 li{
+    padding-bottom: 20px;
 }
