@@ -327,6 +327,11 @@ div.assinar a{
     margin-top: 50px;
 }
 
+.card-cor-diferente:hover{
+    box-shadow: 2px 2px 20px #c9c00faf;
+    transition: box-shadow .5s;
+}
+
 .card-cor-diferente h3{
     text-align: center;
 }
