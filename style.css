@@ -31,10 +31,10 @@ span.material-symbols-outlined{
 }
 
 header{
-   background-image: linear-gradient(to top, black);
+   background: url(imagens/af25fb5b-f2b8-4aa0-8b26-3efa3cc96e81.jpeg) top left, no-repeat;
    background-size: cover;
    height: 800px;
-   background-attachment: scroll;
+  
    font-family: "Archivo Black", sans-serif;
 }
 
@@ -165,7 +165,7 @@ section.cards{
 
 .card1 h3{
     margin-top: 20px;
-    font-family: "Archivo Black", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     max-width: 700px;
 }
 
