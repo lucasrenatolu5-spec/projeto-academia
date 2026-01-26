@@ -60,33 +60,82 @@
         </section>
     </main>
     <script>
-  window.addEventListener('load', () => {
+      window.addEventListener('load', () => {
 
-    const elementos = document.querySelectorAll(
-      'header h1, header #obj, header p, header .links1'
-    )
+        const elementos = document.querySelectorAll(
+          'header h1, header #obj, header p, header .links1'
+        )
 
-    elementos.forEach((el, index) => {
-      el.animate(
-        [
-          {
-            opacity: 0,
-            transform: 'translateY(10px)'
-          },
-          {
-            opacity: 1,
-            transform: 'translateY(0)'
-          }
-        ],
-        {
-          duration: 1100,
-          delay: index * 160,
-          easing: 'ease-out',
-          fill: 'forwards'
-        }
-      )
+        elementos.forEach((el, index) => {
+          el.animate(
+            [
+              {
+                opacity: 0,
+                transform: 'translateY(10px)'
+              },
+              {
+                opacity: 1,
+                transform: 'translateY(0)'
+              }
+            ],
+            {
+              duration: 1100,
+              delay: index * 160,
+              easing: 'ease-out',
+              fill: 'forwards'
+            }
+          )
+        })
+
+      })
+</script>
+<script>
+  const cards = document.querySelectorAll('.card1')
+
+  const sombraBase = '2px 2px 10px rgba(0, 0, 0, 0.205)'
+  const sombraAtiva = '0 14px 40px #c9bf0fa6'
+  const sombraHover = '0 20px 55px #c9bf0fa6'
+
+  cards.forEach(card => {
+    card.style.boxShadow = sombraBase
+    card.style.transition = 'box-shadow 0.8s ease'
+  })
+
+  const observer = new IntersectionObserver((entries) => {
+
+    let ativo = null
+    let maior = 0
+
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > maior) {
+        maior = entry.intersectionRatio
+        ativo = entry.target
+      }
     })
 
+    cards.forEach(card => {
+      card.style.boxShadow = sombraBase
+    })
+
+    if (ativo) {
+      ativo.style.boxShadow = sombraAtiva
+    }
+
+  }, {
+    threshold: [0.25, 0.5, 0.75]
+  })
+
+  cards.forEach(card => observer.observe(card))
+
+  // hover
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.boxShadow = sombraHover
+    })
+
+    card.addEventListener('mouseleave', () => {
+      card.style.boxShadow = sombraAtiva
+    })
   })
 </script>
 
