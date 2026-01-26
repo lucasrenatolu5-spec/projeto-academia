@@ -59,5 +59,36 @@
             </div>
         </section>
     </main>
+    <script>
+  window.addEventListener('load', () => {
+
+    const elementos = document.querySelectorAll(
+      'header h1, header #obj, header p, header .links1'
+    )
+
+    elementos.forEach((el, index) => {
+      el.animate(
+        [
+          {
+            opacity: 0,
+            transform: 'translateY(14px) scale(0.985)'
+          },
+          {
+            opacity: 1,
+            transform: 'translateY(0) scale(1)'
+          }
+        ],
+        {
+          duration: 1600,
+          delay: index * 220,
+          easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          fill: 'forwards'
+        }
+      )
+    })
+
+  })
+</script>
+
 </body>
 </html>
