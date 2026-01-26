@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 /*CORES
- cor 1: #1393DB azul claro 
- cor 2: #1076B1 azul claro escuro
- cor 3: #0D5F8F azul medio claro
- cor 4: #0A486D azul medio escuro
- cor 5: #07324B azul escuro
+ cor 1: #FFF212 amarelo
+ cor 2: #FDC928 amarelo escuro
+ cor 3: #F99F32 laranja
+ cor 4: #FFFFFF branco
+ cor 5: #000000 preto
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
@@ -19,7 +19,7 @@
 nav{
     display: flex;
     background-color: black;
-    color: #0D5F8F;
+    color: #FFF212;
     justify-content: space-between;
     padding: 20px;
     font-family: "Archivo Black", sans-serif;
@@ -47,7 +47,7 @@ header h1{
 }
 
 header #obj strong{
-    color: #1c9ee9;
+    color: #FFF212;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.534);
 }
 
@@ -80,13 +80,13 @@ header a{
 }
 
 #comecar{
-    background-color: #0D5F8F;
+    background-color: #dfd413;
     max-width: 200px;
     margin: auto;
     padding: 20px;
     border-radius: 40px;
     margin-bottom: 20px;
-    box-shadow: 1px 2px 10px #0e6699b2;
+    box-shadow: 1px 2px 10px #bdb40ea6;
 }
 
 #visita{
@@ -99,7 +99,7 @@ header a{
 }
 
 #comecar:hover{
-    box-shadow: 3px 4px 20px #0c6fa8;
+    box-shadow: 3px 4px 20px #c9bf0fa6;
     transition: box-shadow .5s ease, transform .5s ease;
     transform: translate(0px, -3px);
 }
@@ -112,7 +112,7 @@ header a{
 
 main{
     background-color: white;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #section1 h2{
@@ -134,7 +134,7 @@ main{
 section.cards{
     max-width: 900px;
     width: 90%;
-    height: 300px;
+    min-height: 300px;
     margin: auto;
     margin-top: 20px;
 }
@@ -150,16 +150,15 @@ section.cards{
      align-items: center;     /* eixo horizontal */
      text-align: center;
      height: 100%;
-     padding: 10px;
+     padding: 30px;
      background-color: white;
      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
      border-radius: 20px;
      margin-top: 40px;
-     flex-wrap: wrap;
 }
 
 .card1:hover{
-     box-shadow: 2px 2px 20px #0e669973;
+     box-shadow: 2px 2px 20px #c9bf0fa6;
      transition: box-shadow .5s;
 }
 
@@ -172,4 +171,8 @@ section.cards{
 .card1 p{
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
+}
+
+section#planos{
+    background-color: rgba(43, 42, 42, 0.603);
 }
