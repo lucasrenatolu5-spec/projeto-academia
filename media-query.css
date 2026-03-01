@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* Media Query para telas médias e grandes (Tablets e PCs) */
+@media (min-width: 768px) {
+
+    /* Esconde o menu hambúrguer */
+    #burguer {
+        display: none;
+    }
+
+    /* Mostra as opções normalmente na mesma linha */
+    menu#itens {
+        display: block !important;
+        /* overrides JS inline display: none */
+        position: static;
+        width: auto;
+        padding: 0;
+        background-color: transparent;
+    }
+
+    menu#itens ul {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        height: 100%;
+        margin: 0;
+    }
+
+    menu#itens ul li {
+        margin: 0;
+    }
+}

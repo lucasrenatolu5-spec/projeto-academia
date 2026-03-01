@@ -10,36 +10,107 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-nav{
+nav {
     display: flex;
     background-color: black;
     color: #FFF212;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
+    font-family: "Archivo Black", sans-serif;
+    position: relative;
+    /* Necessário para posicionar o menu no mobile */
+}
+
+span.material-symbols-outlined {
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Estilos base do menu para Mobile */
+menu#itens {
+    display: none;
+    /* Escondido por padrão, aberto via JS */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+    z-index: 10;
+    text-align: center;
+}
+
+menu#itens ul {
+    list-style: none;
+}
+
+menu#itens ul li {
+    margin: 15px 0;
+}
+
+menu#itens ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+/* Efeito da linha crescendo no hover, agora suave do centro para as bordas */
+menu#itens ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFF212;
+    /* cor da linha amarela */
+    transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+menu#itens ul li a:hover::after {
+    width: 100%;
+    /* a linha expande do centro suavemente */
+}
+
+/* Animação suave para exibir o menu mobile */
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-active {
+    display: block !important;
+    animation: fadeInMenu 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+header {
+    background: url(imagens/pexels-bemistermister-3490363.jpg) center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 90vh;
+
     font-family: "Archivo Black", sans-serif;
 }
 
-span.material-symbols-outlined{
-    color: white;
-    font-size: 2em;
-}
-
-header{
-   background: url(imagens/pexels-bemistermister-3490363.jpg) center center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   min-height: 90vh;
-   
-   font-family: "Archivo Black", sans-serif;
-}
-
-header h1{
+header h1 {
     color: white;
     text-align: center;
     padding-top: 120px;
@@ -47,18 +118,18 @@ header h1{
     flex-wrap: wrap;
 }
 
-header #obj strong{
+header #obj strong {
     color: #FFF212;
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.534);
 }
 
-header #obj{
+header #obj {
     text-align: center;
     padding-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header p{
+header p {
     text-align: center;
     padding-top: 20px;
     color: white;
@@ -66,30 +137,30 @@ header p{
     font-size: clamp(1rem, 3.5vw, 1.5rem);
     flex-wrap: wrap;
     padding: 30px;
-    
+
 }
 
-div.links1{
-     padding-top: 30px;
+div.links1 {
+    padding-top: 30px;
 }
 
 header h1,
 header #obj,
 header p,
 header .links1 {
-  opacity: 0;
-  transform: translateY(14px) scale(0.985);
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
 }
 
 
-header a{
+header a {
     text-decoration: none;
     color: white;
     display: block;
     text-align: center;
 }
 
-#comecar{
+#comecar {
     background-color: #dfd413;
     max-width: 200px;
     margin: auto;
@@ -99,7 +170,7 @@ header a{
     box-shadow: 1px 2px 10px #bdb40ea6;
 }
 
-#visita{
+#visita {
     background-color: rgba(240, 248, 255, 0);
     border: 1px solid white;
     max-width: 200px;
@@ -108,31 +179,31 @@ header a{
     border-radius: 40px;
 }
 
-#comecar:hover{
+#comecar:hover {
     box-shadow: 3px 4px 20px #c9bf0fa6;
     transition: box-shadow .5s ease, transform .5s ease;
     transform: translate(0px, -3px);
 }
 
-#visita:hover{
+#visita:hover {
     background-color: white;
     color: #FDC928;
     transition: background-color .5s ease, color .5s ease;
 }
 
-main{
+main {
     background-color: white;
     min-height: 100vh;
 }
 
-#section1 h2{
+#section1 h2 {
     font-family: "Archivo Black", sans-serif;
     text-align: center;
     font-size: clamp(1.5rem, 4vw, 3rem);
     padding-top: 100px;
 }
 
-#section1 p{
+#section1 p {
     font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
     text-align: center;
@@ -141,7 +212,7 @@ main{
     font-size: clamp(1.2rem, 4vw, 1rem);
 }
 
-section.cards{
+section.cards {
     max-width: 900px;
     width: 90%;
     min-height: 300px;
@@ -149,42 +220,44 @@ section.cards{
     margin-top: 20px;
 }
 
-.emoji{
+.emoji {
     font-size: 3.5em;
 }
 
-.card1{
-     display: flex;
-     flex-direction: column;
-     justify-content: center; /* eixo vertical */
-     align-items: center;     /* eixo horizontal */
-     text-align: center;
-     height: 100%;
-     padding: 30px;
-     background-color: white;
-     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
-     border-radius: 20px;
-     margin-top: 40px;
-     flex-wrap: wrap;
+.card1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* eixo vertical */
+    align-items: center;
+    /* eixo horizontal */
+    text-align: center;
+    height: 100%;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.205);
+    border-radius: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-.card1:hover{
-     box-shadow: 2px 2px 20px #c9bf0fa6;
-     transition: box-shadow .5s;
+.card1:hover {
+    box-shadow: 2px 2px 20px #c9bf0fa6;
+    transition: box-shadow .5s;
 }
 
-.card1 h3{
+.card1 h3 {
     margin-top: 20px;
     font-family: Arial, Helvetica, sans-serif;
     max-width: 700px;
 }
 
-.card1 p{
+.card1 p {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 20px;
 }
 
-section#planos{
+section#planos {
     background-color: #1B1B1B;
     color: white;
     min-height: 100vh;
@@ -192,24 +265,24 @@ section#planos{
     padding-bottom: 100px;
 }
 
-section#planos > div{
-   padding-top: 100px;
+section#planos>div {
+    padding-top: 100px;
 }
 
-section#planos div h2{
+section#planos div h2 {
     text-align: center;
     font-family: "Archivo Black", sans-serif;
     padding-bottom: 30px;
     font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
-section#planos div p{
+section#planos div p {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(1rem, 3.2vw, 1rem);
 }
 
-.card2{
+.card2 {
     background-color: #FFF212;
     color: black;
     max-width: 90%;
@@ -220,44 +293,44 @@ section#planos div p{
     margin-top: 50px;
 }
 
-.card2:hover{
+.card2:hover {
     box-shadow: 2px 2px 20px #c9c00faf;
     transition: box-shadow .5s;
 }
 
-.card2 h3{
+.card2 h3 {
     text-align: center;
 }
 
-.numeros{
-  display: flex;
-  align-items: flex-start;
-  font-family: Arial, sans-serif;
-  font-size: 2em;
-  justify-content: center;
-  justify-items: center;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.numeros {
+    display: flex;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
-.moeda{
-  font-size: 18px;
-  margin-right: 4px;
+.moeda {
+    font-size: 18px;
+    margin-right: 4px;
 }
 
-.valor{
-  font-size: 64px;
-  font-weight: bold;
-  line-height: 1;
+.valor {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1;
 }
 
-.periodo{
-  font-size: 16px;
-  margin-left: 4px;
-  margin-top: 50px;
+.periodo {
+    font-size: 16px;
+    margin-left: 4px;
+    margin-top: 50px;
 }
 
-.beneficios ul.lista{
+.beneficios ul.lista {
     justify-content: flex-start;
     justify-items: flex-start;
     font-size: 0.7em;
@@ -267,27 +340,27 @@ section#planos div p{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.beneficios li{
+.beneficios li {
     padding-bottom: 10px;
 }
 
-hr{
+hr {
     border-color: rgba(0, 0, 0, 0.096);
     height: 1px;
     width: 100%;
 }
 
-div.assinar{
+div.assinar {
     display: flex;
     padding: 20px;
 }
 
-div.assinar1{
+div.assinar1 {
     display: flex;
     padding: 20px;
 }
 
-div.assinar a{
+div.assinar a {
     text-decoration: none;
     color: black;
     background-color: rgba(255, 255, 255, 0);
@@ -297,7 +370,7 @@ div.assinar a{
     font-size: 0.7em;
 }
 
-.assinar1 a{
+.assinar1 a {
     text-decoration: none;
     color: white;
     background-image: linear-gradient(to top, #FDC928, #FFF212);
@@ -306,18 +379,18 @@ div.assinar a{
     font-size: 0.7em;
 }
 
-.assinar1 a:hover{
+.assinar1 a:hover {
     transition: box-shadow .5s ease, transform .5s ease;
     transform: translate(0px, -5px);
 }
 
-.assinar a:hover{
+.assinar a:hover {
     background-color: #1B1B1B;
     color: white;
     transition: background-color .3s ease-in-out, color .3s ease-in-out;
 }
 
-.card-cor-diferente{
+.card-cor-diferente {
     background-color: white;
     color: black;
     max-width: 90%;
@@ -328,16 +401,16 @@ div.assinar a{
     margin-top: 50px;
 }
 
-.card-cor-diferente:hover{
+.card-cor-diferente:hover {
     box-shadow: 2px 2px 20px #c9c00faf;
     transition: box-shadow .5s;
 }
 
-.card-cor-diferente h3{
+.card-cor-diferente h3 {
     text-align: center;
 }
 
-.beneficios2 ul{
+.beneficios2 ul {
     justify-content: flex-start;
     justify-items: flex-start;
     font-size: 0.7em;
@@ -346,26 +419,67 @@ div.assinar a{
     list-style: none;
 }
 
-.beneficios2 li{
+.beneficios2 li {
     padding-bottom: 10px;
 }
 
-section.estrutura{
+section.estrutura {
     min-height: 100vh;
     text-align: center;
 }
 
-section.estrutura div.espaco h2{
+section.estrutura div.espaco h2 {
     margin-top: 100px;
     padding-bottom: 20px;
     font-size: clamp(2.5rem, 5.5vw, 4rem);
     font-family: "Archivo Black", sans-serif;
 }
 
-section.estrutura div.espaco p{
+section.estrutura div.espaco p {
     font-size: clamp(1rem, 3.5vw, 1.5rem);
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Container das fotos de estrutura */
+.card3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+/* Estilo individual de cada foto */
+.foto-estrutura {
+    width: 100%;
+    max-width: 45%;
+    /* Mostra 2 imagens por linha nas telas maiores */
+    height: 300px;
+    /* Altura fixa para manter um layout equilibrado */
+    border-radius: 15px;
+    /* Bordas arredondadas e bonitas */
+    overflow: hidden;
+    /* Oculta as bordas da imagem original para manter as bordas arredondadas no container */
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
+}
 
+.foto-estrutura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Garante que a foto preencha tudo sem distorcer as proporções */
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Transição suave no zoom com js */
+    transform-origin: center;
+}
+
+/* Responsividade - Uma imagem por linha no celular */
+@media (max-width: 768px) {
+    .foto-estrutura {
+        max-width: 100%;
+        height: 250px;
+    }
+}
